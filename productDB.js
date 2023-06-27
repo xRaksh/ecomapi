@@ -4,8 +4,12 @@ const Product = require("./src/models/M_produtcs")
 
 const dot = require("dotenv")
 dot.config().parsed
-const URL = process.env.MONGODB_URL
+// const URL = process.env.MONGODB_URL
 
+const DB = process.env.DB
+const PASS = process.env.PASS
+
+const URL = `mongodb+srv://varun:${PASS}@abhi.ba1das3.mongodb.net/${DB}?retryWrites=true&w=majority`
 
 
 const push = async() =>{

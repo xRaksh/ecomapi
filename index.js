@@ -7,7 +7,11 @@ const connectDB = require("./src/DB/Connect")
 const app = express()
 dot.config().parsed
 const PORT = process.env.PORT
-const URL = process.env.MONGODB_URL
+// const URL = process.env.MONGODB_URL
+const DB = process.env.DB
+const PASS = process.env.PASS
+
+const URL = `mongodb+srv://varun:${PASS}@abhi.ba1das3.mongodb.net/${DB}?retryWrites=true&w=majority`
 
 app.get("/",(req,res) =>{
     res.send("hello NEM")
