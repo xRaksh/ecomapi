@@ -13,8 +13,9 @@ const getAllproducts = async(req,res) =>{
         queryObject.name = { $regex:name, $options:"i" }
     }
 
-    const Data = await Product.find(queryObject)
+    const Data = await Product.find(queryObject).sort('id -test');
     res.status(200).json({ Data })
+    console.log(Data);
 }
 
 
