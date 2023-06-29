@@ -1,3 +1,4 @@
+const cors = require("cors")
 const dot = require("dotenv")
 const express = require("express")
 
@@ -5,6 +6,9 @@ const routes = require("./src/routes/R_products")
 const connectDB = require("./src/DB/Connect")
 
 const app = express()
+
+app.use(cors())
+
 dot.config().parsed
 const PORT = process.env.PORT
 // const URL = process.env.MONGODB_URL
